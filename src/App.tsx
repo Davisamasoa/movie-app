@@ -1,7 +1,12 @@
-//{import.meta.env.VITE_API_KEY}
-
-import { useEffect, useState } from "react";
+import { CategoryRow } from "./components/CategoryRow";
+import { categories } from "./services/api";
 
 export function App() {
-	return <h1 className="text-9xl text-amber-400"></h1>;
+  return (
+    <div>
+      {categories.map(({ title, path }) => (
+        <CategoryRow key={title} title={title} path={path} />
+      ))}
+    </div>
+  );
 }
