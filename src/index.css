@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+	background-color: rgb(14, 13, 13);
+}
+
+img {
+	max-width: none !important;
+	min-height: none !important;
+}
+
+.row::-webkit-scrollbar {
+	display: block;
+
+	visibility: hidden;
+	background-color: rgb(29, 29, 29);
+	border-radius: 10px;
+	height: 30px;
+	width: 90%;
+}

@@ -1,13 +1,15 @@
 interface CategoryCardProps {
-  title: string;
-  imageUrl: string;
+	title: string;
+	imageUrl: string;
 }
 
 export function CategoryCard({ title, imageUrl }: CategoryCardProps) {
-  return (
-    <picture>
-      <img src={`https://image.tmdb.org/t/p/w500/${imageUrl}`} />
-      <figcaption>{title}</figcaption>
-    </picture>
-  );
+	return (
+		<picture className="cursor-pointer">
+			<img
+				className="transition-all z-0 duration-300  w-32 hover:scale-125"
+				src={`https://image.tmdb.org/t/p/w500/${imageUrl}`}
+			/>
+		</picture>
+	);
 }
