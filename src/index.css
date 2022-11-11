@@ -13,14 +13,26 @@ img {
 
 .row::-webkit-scrollbar {
 	display: block;
-
-	visibility: hidden;
-	background-color: rgb(29, 29, 29);
 	border-radius: 10px;
-	height: 30px;
-	width: 90%;
+	height: 10px;
+	margin-block: 50px;
 }
 
+@media (max-width: 768px) {
+	.row::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.row::-webkit-scrollbar-thumb {
+	background-color: #2e2e2e;
+	border-radius: 10px;
+	margin-block: 50px;
+}
+
+.row::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
 header {
 	font-family: "Bebas Neue", cursive;
 }

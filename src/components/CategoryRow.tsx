@@ -16,9 +16,9 @@ export function CategoryRow({ title, path }: CategoryRowProps) {
 	}, [path]);
 
 	return (
-		<section className=" mt-4 mb-0 z-0">
+		<section className=" mt-4 mb-5 z-0">
 			<h2 className="sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-white">{title}</h2>
-			<div className="flex max-w-none overflow-y-hidden overflow-x-auto   z-0 row">
+			<div className="flex max-w-none overflow-y-hidden  md:overflow-x-auto    z-0 row">
 				{movies.map(({ id, title, poster_path }) => (
 					<CategoryCard key={id} title={title} imageUrl={poster_path} />
 				))}
