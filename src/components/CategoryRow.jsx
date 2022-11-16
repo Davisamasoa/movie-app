@@ -14,27 +14,29 @@ export function CategoryRow({ title, path }) {
 	}, [path]);
 
 	function handleNavigateButton(e) {
+		let num;
+
 		if (e.currentTarget.classList[0] == "-left-5") {
 			navigate <= 0 ? navigate : (navigate -= movieWidth);
-			moviesDiv.current.scroll(navigate, 0);
+			moviesDiv.current.scrollLeft = navigate;
 		} else {
-			navigate >= movieWidth * 14 ? navigate : (navigate += movieWidth);
-			moviesDiv.current.scroll(navigate, 0);
+			navigate >= moviesDiv.current.scrollWidth - moviesDiv.current.clientWidth
+				? navigate
+				: (navigate += movieWidth);
+			moviesDiv.current.scrollLeft = navigate;
 		}
 
-		console.log(buttonsDiv.current.classList);
+		console.log(moviesDiv);
 	}
 
 	function navigateOpacityOn() {
 		buttonsDiv.current.className =
 			"buttons absolute w-full h-50 hidden md:block md:opacity-100 transition duration-200 opacity-0  z-20";
-		console.log(buttonsDiv.current.className);
 	}
 
 	function navigateOpacityOff() {
 		buttonsDiv.current.className =
 			"buttons absolute w-full h-50 hidden md:block md:opacity-0 transition duration-200 opacity-0  z-20";
-		console.log(buttonsDiv.current.className);
 	}
 
 	return (
