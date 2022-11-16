@@ -12,16 +12,10 @@ img {
 }
 
 .row::-webkit-scrollbar {
-	display: block;
+	display: none;
 	border-radius: 10px;
 	height: 10px;
 	margin-block: 50px;
-}
-
-@media (max-width: 768px) {
-	.row::-webkit-scrollbar {
-		display: none;
-	}
 }
 
 .row::-webkit-scrollbar-thumb {
