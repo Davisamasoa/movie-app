@@ -15,18 +15,19 @@ export function CategoryRow({ title, path }) {
 
 	function handleNavigateButton(e) {
 		let num;
+		const gap = 5;
 
 		if (e.currentTarget.classList[0] == "-left-5") {
-			navigate <= 0 ? navigate : (navigate -= movieWidth);
+			navigate <= 0 ? navigate : (navigate -= movieWidth + gap);
 			moviesDiv.current.scrollLeft = navigate;
 		} else {
 			navigate >= moviesDiv.current.scrollWidth - moviesDiv.current.clientWidth
 				? navigate
-				: (navigate += movieWidth);
+				: (navigate += movieWidth + gap);
 			moviesDiv.current.scrollLeft = navigate;
 		}
 
-		console.log(moviesDiv);
+		console.log(moviesDiv.current.style.gap);
 	}
 
 	function navigateOpacityOn() {
@@ -46,7 +47,7 @@ export function CategoryRow({ title, path }) {
 				ref={moviesDiv}
 				onMouseEnter={() => navigateOpacityOn()}
 				onMouseLeave={() => navigateOpacityOff()}
-				className="flex scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
+				className="flex gap-[5px] scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
 			>
 				<div
 					ref={buttonsDiv}
